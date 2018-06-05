@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnityChanController : MonoBehaviour {
+public class UnityChanController : MonoBehaviour
+{
     //アニメーションするためのコンポーネントを入れる
     Animator animator;
     //地面の位置
     private float groundLevel = 3.0f;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         //アニメーターのコンポーネントを取得する
         this.animator = GetComponent<Animator>();
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         //走るアニメーションを再生するためにAnimatorのパラメータを調節する
         this.animator.SetFloat("Horizontal", 1);
 
