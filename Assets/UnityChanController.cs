@@ -7,7 +7,7 @@ public class UnityChanController : MonoBehaviour
     //アニメーションするためのコンポーネントを入れる
     Animator animator;
     //地面の位置
-    private float groundLevel = 3.0f;
+    private float groundLevel = -3.0f;
 	// Use this for initialization
 	void Start ()
     {
