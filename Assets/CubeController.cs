@@ -22,6 +22,12 @@ public class CubeController : MonoBehaviour
         //キューブを移動させる
         transform.Translate(this.speed, 0, 0);
 
+        /*
+        //地面かブロックと接触してなければ音量を0にする
+        if(OnCollisonEnter()S = )
+        GetComponent<AudioSource>().volume = 0;
+        */
+
         //画面外に出たら破棄する
         if(transform.position.x <this.deadLine)
         {
@@ -30,4 +36,16 @@ public class CubeController : MonoBehaviour
 
 		
 	}
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        if (other.gameObject.tag == "block" || other.gameObject.tag == "ground")
+        {
+             
+            GetComponent<AudioSource>().Play();
+        }
+
+
+    }
 }
