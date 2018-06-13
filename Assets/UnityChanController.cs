@@ -48,15 +48,15 @@ public class UnityChanController : MonoBehaviour
         //ジャンプ状態の時にはボリュームを0にする
         GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
 
-        // 着地状態でクリックされた場合（追加）
-        if (Input.GetMouseButtonDown(0) && isGround)
+        // 着地状態でクリックされた場合
+        if (Input.GetMouseButtonDown(1) && isGround)
         {
             // 上方向の力をかける（追加）
             this.rigid2D.velocity = new Vector2(0, this.jumpVelocity);
         }
 
         // クリックをやめたら上方向への速度を減速する（追加）
-        if (Input.GetMouseButton(0) == false)
+        if (Input.GetMouseButton(1) == false)
         {
             if (this.rigid2D.velocity.y > 0)
             {
