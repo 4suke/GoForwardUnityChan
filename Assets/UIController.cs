@@ -19,11 +19,13 @@ public class UIController : MonoBehaviour
     //走行距離テキスト
     private GameObject runLengthText;
 
+
     //走った距離
     private float len = 0;
 
     //走る速度
     private float speed = 0.03f;
+
 
     //ゲームオーバの判定
     private bool isGameOver = false;
