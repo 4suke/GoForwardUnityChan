@@ -13,10 +13,10 @@ public class UnityChanController : MonoBehaviour
     private float groundLevel = -3.0f;
 
     // ジャンプの速度の減衰（追加）
-    private float dump = 0.8f;
+    private float dump = 0.6f;
 
     // ジャンプの速度（追加）
-    float jumpVelocity = 20;
+    float jumpVelocity = 30;
 
     //ゲームオーバになる位置
     private float deadLine = -9;

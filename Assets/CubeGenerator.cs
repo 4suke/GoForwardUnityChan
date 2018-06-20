@@ -7,6 +7,11 @@ public class CubeGenerator : MonoBehaviour
     //キューブのprefab
     public GameObject cubePrefab;
 
+    /*
+     //キューブ2のprefab
+     public GameObject cube2Prefab;
+     */
+
     //時間計測用の変数
     private float delta = 0;
 
@@ -52,6 +57,19 @@ public class CubeGenerator : MonoBehaviour
             //指定した数だけキューブを作成する
             for (int i = 0; i < n; i++) 
             {
+                /*
+                int item = Random.Range(1, 10);
+                if (1 <= item && item <= 8)
+                {
+                GameObject go = Instantiate(cubePrefab) as GameObject;
+                go.transform.position = new Vector2 (this.genPosX, this.offsetY + i * this.spaceY) ;
+                }
+                else
+                {
+                GameObject go = Instantiate(cube2Prefab) as GameObject;
+                go.transform.position = new Vector2 (this.genPosX, this.offsetY + i * this.spaceY) ;
+                }
+                 */
                 //キューブの作成
                 GameObject go = Instantiate(cubePrefab) as GameObject;
                 go.transform.position = new Vector2 (this.genPosX, this.offsetY + i * this.spaceY) ;
