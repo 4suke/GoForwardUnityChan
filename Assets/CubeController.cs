@@ -8,7 +8,7 @@ public class CubeController : MonoBehaviour
     private float speed = -0.15f;
 
     //消滅位置
-    private float deadLine = -10;
+    private float deadLine = -20;
 
 	// Use this for initialization
 	void Start ()

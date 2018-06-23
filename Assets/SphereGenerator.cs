@@ -12,13 +12,17 @@ public class SphereGenerator : MonoBehaviour {
     //ボールの生成間隔
     private float span = 1.0f;
 
+    //ボールの上昇速度の減衰
+    private float dump = 0.6f;
+
     //ボールの生成位置：X, Y座標
     private float x = 0;
     private float y = 0;
     //unityのゲームオブジェクトを宣言
     private GameObject unity;
     
-
+    //ボールが打てなくなるペナルティタイム
+    private int penalty = 10;
     
 
     
@@ -29,14 +33,15 @@ public class SphereGenerator : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-       
+        //unitychanのオブジェクトを取得
+        unity = GameObject.Find("UnityChan2D");
+
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //unitychanのオブジェクトを取得
-        unity = GameObject.Find("UnityChan2D");
+       
         x = unity.transform.position.x;
         y = unity.transform.position.y;
      

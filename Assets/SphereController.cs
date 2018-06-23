@@ -16,11 +16,10 @@ public class SphereController : MonoBehaviour {
     private GameObject Hitting;
 
     //ボールの発射速度
-    private float powerX = 5;
+    private float powerX = 20;
     private float powerY = 15;
 
-    // ボールの速度の減衰
-    private float dump = 0.8f;
+    
 
     
 
@@ -29,7 +28,10 @@ public class SphereController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
+        /*
+        if (Input.GetMouseButtonDown(0)) { }
+        */
+
         // Rigidbody2Dのコンポーネントを取得する
         this.rigid2D = GetComponent<Rigidbody2D>();
         rigid2D.AddForce(new Vector2(powerX, powerY), ForceMode2D.Impulse);
@@ -42,17 +44,7 @@ public class SphereController : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        // クリックをやめたら上方向への速度を減速する
-        if (Input.GetMouseButton(0) == false)
-        {
-            if (this.rigid2D.velocity.y > 0)
-            {
-                /*
-                this.rigid2D.velocity *= this.dump;
-                */
-            }
-
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -64,7 +56,7 @@ public class SphereController : MonoBehaviour {
             //接触したオブジェクトを破棄
             Destroy(other.gameObject);
             Destroy(gameObject);
-           
+
 
 
 

@@ -19,7 +19,7 @@ public class UnityChanController : MonoBehaviour
     float jumpVelocity = 30;
 
     //ゲームオーバになる位置
-    private float deadLine = -9;
+    private float deadLine = -20.5f;
 
 
 
