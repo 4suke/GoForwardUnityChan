@@ -10,7 +10,7 @@ public class UnityChanController : MonoBehaviour
     Rigidbody2D rigid2D;
 
     // 地面の位置
-    private float groundLevel = -3.0f;
+    private float groundLevel = -7.0f;
 
     // ジャンプの速度の減衰（追加）
     private float dump = 0.6f;

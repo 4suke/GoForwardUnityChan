@@ -16,22 +16,21 @@ public class SphereController : MonoBehaviour {
     private GameObject Hitting;
 
     //ボールの発射速度
-    private float powerX = 20;
+    private float powerX = 0;
     private float powerY = 15;
 
     
 
-    
+   
 
 
 
     // Use this for initialization
     void Start ()
     {
-        /*
-        if (Input.GetMouseButtonDown(0)) { }
-        */
-
+        //発射する力を計算する関数を呼び出す
+        GameObject.FindObjectOfType<SphereGenerator>().ThrowForce(powerX);
+        
         // Rigidbody2Dのコンポーネントを取得する
         this.rigid2D = GetComponent<Rigidbody2D>();
         rigid2D.AddForce(new Vector2(powerX, powerY), ForceMode2D.Impulse);
@@ -52,13 +51,16 @@ public class SphereController : MonoBehaviour {
         if (other.gameObject.tag == "block")
         {
 
+            if(other.gameObject.name.Contains("Cube2Prefab"))
+            {
+                Debug.Log("Add Penalty");
+                GameObject.FindObjectOfType<SphereGenerator>().AddPenaltyTime(5.0f);
+            }
+
             Particle.transform.position = new Vector2(this.transform.position.x, this.transform.position.y);
             //接触したオブジェクトを破棄
             Destroy(other.gameObject);
             Destroy(gameObject);
-
-
-
 
             ScoreManeger.GetComponent<ScoreManeger>().Addscore(10);
             Particle.GetComponent<ParticleGenerator>().Particle();
@@ -71,4 +73,6 @@ public class SphereController : MonoBehaviour {
 
 
     }
+
+    
 }

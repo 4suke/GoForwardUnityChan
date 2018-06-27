@@ -8,6 +8,7 @@ TagManager:
   - block
   - ground
   - Sphere
+  - Block2
   layers:
   - Default
   - TransparentFX
